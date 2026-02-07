@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Greencastle Chess Club</title> <!-- 這裡可以改你的社團名稱 -->
+    
+    <!-- PWA 設定 -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon.png">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1a1a2e;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 替換下方的網址 -->
+    <iframe src="https://script.google.com/macros/s/AKfycbxYUMyxEBqYeC06IOZv29jOKfBvYC4EA6M7OI-lj_HBJ8KroqYNPcUg2iIxz7iwmvOw/exec"></iframe>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('SW registered!', reg))
+                .catch(err => console.log('SW error', err));
+        }
+    </script>
+</body>
+</html>
